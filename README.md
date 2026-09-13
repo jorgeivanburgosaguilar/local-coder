@@ -1,11 +1,11 @@
 # local-coder
 
-> **Experimental learning project — not for production use.**
->
-> local-coder is a small local model spawner built to explore Ollama, GGUF
-> models, streaming, tool calls, and a subset of the OpenAI Chat Completions
-> API. It was made for learning and fun, not reliability, security, scale, or
-> production support.
+## **Experimental learning project — not for production use.**
+
+`local-coder` is a small local model spawner built to explore Ollama, GGUF
+models, streaming, tool calls, and a subset of the OpenAI Chat Completions
+API. It was made for learning and fun, not reliability, security, scale, or
+production support.
 
 `local-coder` starts (or reuses) an Ollama service, registers configured local
 GGUF models, and exposes them through an OpenAI-compatible endpoint for tools
