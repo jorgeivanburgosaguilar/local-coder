@@ -1,0 +1,65 @@
+{
+  "server": {
+    "host": "127.0.0.1",
+    "port": 8080,
+    "api_key": ""
+  },
+  "ollama": {
+    "host": "http://127.0.0.1:11434",
+    "default_preset_one_shot": "coder",
+    "default_preset_serve": "coder"
+  },
+  "service": {
+    "manage": true,
+    "command": "ollama",
+    "startup_timeout_seconds": 60,
+    "env": {
+      "OLLAMA_FLASH_ATTENTION": "1",
+      "OLLAMA_KV_CACHE_TYPE": "q8_0",
+      "OLLAMA_NUM_PARALLEL": "1",
+      "OLLAMA_MAX_LOADED_MODELS": "1",
+      "OLLAMA_MODELS": "D:\\Modelos\\Ollama"
+    }
+  },
+  "models": [
+    {
+      "name": "coder",
+      "tag": "local-coder:qwen2.5-coder-7b",
+      "gguf_path": "D:\\Modelos\\stefancosma\\Qwen2.5-Coder-7B-Instruct-Q4_K_M-GGUF\\qwen2.5-coder-7b-instruct-q4_k_m.gguf",
+      "renderer": "",
+      "parser": "",
+      "tool_shim": "auto",
+      "stop": ["<|im_end|>", "<|endoftext|>"],
+      "keep_alive": "5m",
+      "options": {
+        "num_ctx": 16384,
+        "num_gpu": 99,
+        "num_batch": 512,
+        "temperature": 0.2,
+        "top_k": 40,
+        "top_p": 0.95,
+        "repeat_penalty": 1.1,
+        "seed": 42
+      }
+    },
+    {
+      "name": "agent",
+      "tag": "local-coder:gemma-4-e2b-agent",
+      "gguf_path": "D:\\Modelos\\lmstudio-community\\gemma-4-E2B-it-QAT-GGUF\\gemma-4-E2B-it-QAT-Q4_0.gguf",
+      "renderer": "gemma4",
+      "parser": "gemma4",
+      "stop": ["<turn|>"],
+      "keep_alive": "5m",
+      "options": {
+        "num_ctx": 24576,
+        "num_gpu": 99,
+        "num_batch": 512,
+        "temperature": 0.2,
+        "top_k": 40,
+        "top_p": 0.95,
+        "repeat_penalty": 1.1,
+        "seed": 42
+      }
+    }
+  ]
+}
